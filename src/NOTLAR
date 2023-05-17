@@ -1,0 +1,10 @@
+Generics
+
+1-) Genericler, derleme zamanında hatalarınızın(CTE) daha fazlasını algılanabilir hale getirerek kodunuza kararlılık katar.
+2-)Generic tipler sınıflar, metodlar ve interfaceler için de kullanılabilir.
+3-)Genericlerde primitive(ilkel) data tipleri parametre olarak kullanılamaz.
+4-)Array data tipi generic türler ile parametrelendirilemez.
+   Faydaları;
+   1-)Farklı data tipleri üzerinde çalışan tek bir sınıf, metod veya interface yazmayı sağlar.
+   2-)Yazılım parçacıkları içerisinde tekrar kullanılabilir kod yazmamıza yardımcı olarak kod tekrarını önler.
+   3-)Çalışma zamanında (run time) gereksiz Cast ve Boxing-Unboxing kullanmasını önlediğinden efektif performans sağlar.
