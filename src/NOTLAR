@@ -4,7 +4,50 @@ Generics
 2-)Generic tipler sınıflar, metodlar ve interfaceler için de kullanılabilir.
 3-)Genericlerde primitive(ilkel) data tipleri parametre olarak kullanılamaz.
 4-)Array data tipi generic türler ile parametrelendirilemez.
+5-)Üstten sınırlandırma=number üst sınır
+   List<? extends Number>  numberin üstü olamaz data tip yani object olamaz
+6-)Alttan sınırlandırma    ıntegerin üstü olabilir yani integer,number,object    integer dahil
+   (List<? super Integer> list)
+7-) Parametre olarak tipten bağımsız array alan ve yine tipten bağımsız List döndüren metot
+    public<T> List  <T> fromArrayToList( T[] array){}
+8-)Generic interfacelerin metodları da generic olmak zorunda değildir.
+9-)lower bound wildcard type(alttan sınırlı wildcard tür)
+   upper bound wildcard type(üstten sınırlı wildcard tür)
+
+
    Faydaları;
    1-)Farklı data tipleri üzerinde çalışan tek bir sınıf, metod veya interface yazmayı sağlar.
    2-)Yazılım parçacıkları içerisinde tekrar kullanılabilir kod yazmamıza yardımcı olarak kod tekrarını önler.
    3-)Çalışma zamanında (run time) gereksiz Cast ve Boxing-Unboxing kullanmasını önlediğinden efektif performans sağlar.
+
+
+
+Thread
+
+1-) Thread=iş parçacığı.
+2-)Java'da bir threadin(iş parçacığının) yaşam döngüsü JVM tarafından kontrol edilir:
+JVM==>(Java Virtual Machine) Java programlarını farklı işletim sistemlerinde bağımsız olarak çalıştırmak için kullanılır.
+3-)Javada bir thread Runnable interface'i implemente edilerek oluştrulabililr.
+4-)Javada bir thread, Thread sınıfı extend edilerek oluşturulabilir.
+5-)start() metodu yeni thread oluşturur ve run() metodunda yazılan kodu çalıştırır.
+6-) SYNCHRONİZED ==>
+     Bir sınıftaki herhangi bir metod synchronized ifadesini aldığı zaman o metoda bir thread girdiğinde metodun bulunduğu
+ obje lock mekanizması ile erişime kapatılır. Bu durumda başka bir thread o sınıf içindeki hiçbir synchronized
+ metoda erişemez. synchronized metod üzerinde işlem yapan thread metoddan çıktığı zaman ise lock kaldırılır ve tüm
+ obje yeniden erişilebilir hale gelir.
+
+7-) Wait-Notify
+ Bazı durumlarda birden fazla thread tarafından paylaşılan obje geçici olarak kullanıma uygun olmayabilir.
+ Bu durumda thread objeyi kullanmak yerine wait metodunu çağırarak kendini beklemeye alır ve diğer threadlerin
+ işlemleri bitirmesi için beklemeye geçer. Diğer threadler işlemlerini bitirince notify yada notifyAll
+ metodlarını çağırarak diğer bekleyen threadleri uyarır.
+
+8-)Thread sınıfının sleep() metodu parametrede verilen milisaniye kadar uygulamanın duraksamasını sağlar.
+9-)Java'da paylaşılan bir kaynağa erişmek isteyen threadlerin(iş parçacıklarının) sayısını sınırlamak için
+   bir Semaphore kullanılır.
+10-)Thread sınıfının join metodu, geçerli threadin(iş parçacığının) diğer threadlerin işini bitirmesini beklemesi için kullanılır.
+11-)</em>Deadlock/deadlock<em>  iki ya da daha fazla threadin devam etmek için birbirlerinin bitmesini
+    beklemesi ve sonuçta ikisinin de devam edememesi durumudur.
+12-)
+
+

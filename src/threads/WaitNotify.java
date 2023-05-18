@@ -23,6 +23,9 @@ birden fazla bekleyen thread varsa notifyAll(); kullanılır
 wait ve notify: bir yada daha fazla threadin işlemini tamamlayabilmesi için
 diğer threadin yapacağı işlemin tamamlanmasının gerektiği durumlarda
 monitör edilen obje için kullanılır.
+
+wait ve notify: threadler arasındaki iletişimi sağlar
+
  */
 public class WaitNotify {
     public static int balance=0; // her iki thread de bakiyeyi değiştirmeye calıstıgı için sıralı calısma için methodlar synchronized olmalı
@@ -95,6 +98,8 @@ public class WaitNotify {
             balance+=amount;
             System.out.println("Para yatırma işlemi gerçekleşti. Mevcut bakiye: "+balance);
             notify();//bekleyen thread e bildirim gönderir
+
+            System.out.println("burası calısır");// notify uyarı gönderir ama method içi bitmeden objeyi serbst bırakmaz
         }
 
 
